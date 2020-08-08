@@ -1,14 +1,15 @@
 FROM alpine
 
 LABEL maintainer="ZHUANGZHUANG <mail@zhuangzhuang.ml>"
+LABEL version="Snell v2.0.3"
 
-RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" && \
+RUN SNELL_VERSION="v2.0.3" && \
+    SNELL_URL="https://github.com/surge-networks/snell/releases/download" && \
+    SNELL_FILENAME="snell-server-${SNELL_VERSION}-linux-amd64.zip" && \
     ALPINE_GLIBC_PACKAGE_VERSION="2.29-r0" && \
+    ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" && \
     ALPINE_GLIBC_BASE_PACKAGE_FILENAME="glibc-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
     ALPINE_GLIBC_BIN_PACKAGE_FILENAME="glibc-bin-$ALPINE_GLIBC_PACKAGE_VERSION.apk" && \
-    SNELL_URL="https://github.com/surge-networks/snell/releases/download" && \
-    SNELL_VERSION="v2.0.3" && \
-    SNELL_FILENAME="snell-server-${SNELL_VERSION}-linux-amd64.zip" && \
     apk add --no-cache --virtual=.build-dependencies wget ca-certificates && \
     echo \
         "-----BEGIN PUBLIC KEY-----\
