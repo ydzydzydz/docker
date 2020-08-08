@@ -1,6 +1,6 @@
 FROM alpine
 
-MAINTAINER ZHUANGZHUANG
+LABEL maintainer="ZHUANGZHUANG <mail@zhuangzhuang.ml>"
 
 RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases/download" && \
     ALPINE_GLIBC_PACKAGE_VERSION="2.29-r0" && \

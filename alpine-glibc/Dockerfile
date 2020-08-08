@@ -1,5 +1,7 @@
 FROM alpine:3.11
 
+LABEL maintainer="ZHUANGZHUANG <mail@zhuangzhuang.ml>"
+
 ENV LANG=C.UTF-8
 
 # Here we install GNU libc (aka glibc) and set C.UTF-8 locale as default.
